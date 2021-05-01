@@ -49,4 +49,7 @@ RUN while read -r package; do PACKAGES="${PACKAGES}${package} "; done < /sdk/pac
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash #Add Node Repo
 RUN apt-get install -y nodejs --no-install-recommends #Install NOde JS
+RUN apt-get update -yq
+RUN apt-get install -y ruby ruby-dev rubygems-integration build-essential g++
 RUN npm install -g react-native-cli #Install React-Native CLI
+RUN gem install bundler -v 1.17.2
