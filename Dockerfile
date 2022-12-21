@@ -11,7 +11,7 @@
 # ADD packages.txt /sdk
 # RUN mkdir -p /root/.android && \
 #   touch /root/.android/repositories.cfg && \
-#   ${ANDROID_HOME}/tools/bin/sdkmanager --update 
+#   ${ANDROID_HOME}/tools/bin/sdkmanager --update
 
 # RUN while read -r package; do PACKAGES="${PACKAGES}${package} "; done < /sdk/packages.txt && \
 #   ${ANDROID_HOME}/tools/bin/sdkmanager ${PACKAGES}
@@ -26,12 +26,12 @@ LABEL Description="This image provides a base Android development environment fo
 ENV DEBIAN_FRONTEND=noninteractive
 
 # set default build arguments
-ARG SDK_VERSION=commandlinetools-linux-7302050_latest.zip
-ARG ANDROID_BUILD_VERSION=30
-ARG ANDROID_TOOLS_VERSION=30.0.3
-ARG BUCK_VERSION=2021.01.12.01
-ARG NDK_VERSION=21.4.7075529
-ARG NODE_VERSION=14.x
+ARG SDK_VERSION=commandlinetools-linux-8512546_latest.zip
+ARG ANDROID_BUILD_VERSION=33
+ARG ANDROID_TOOLS_VERSION=33.0.0
+ARG BUCK_VERSION=2022.05.05.01
+ARG NDK_VERSION=23.1.7779620
+ARG NODE_VERSION=16.x
 ARG WATCHMAN_VERSION=4.9.0
 
 # set default environment variables, please don't remove old env for compatibilty issue
@@ -50,7 +50,7 @@ RUN apt-get install -y locales
 RUN locale-gen en_US.UTF-8
 RUN apt update -qq && apt install -qq -y --no-install-recommends \
       apt-transport-https \
-      bzip2 \ 
+      bzip2 \
       curl \
       git-core \
       html2text \
